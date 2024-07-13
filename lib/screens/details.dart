@@ -8,8 +8,6 @@ import 'package:task/screens/cart.dart';
 class DetailPage extends StatefulWidget {
   const DetailPage({super.key});
 
-  
-
   @override
   // ignore: library_private_types_in_public_api
   _DetailPageState createState() => _DetailPageState();
@@ -63,7 +61,9 @@ class _DetailPageState extends State<DetailPage> {
         decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(
-              color: isSelected ? const Color(0xFF631E36) : const Color(0xFFD3D3D3)),
+              color: isSelected
+                  ? const Color(0xFF631E36)
+                  : const Color(0xFFD3D3D3)),
           shape: BoxShape.circle,
         ),
         child: Center(
@@ -83,6 +83,7 @@ class _DetailPageState extends State<DetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+       backgroundColor: const Color(0xFFECF1F5),
       body: Padding(
         padding: EdgeInsets.only(bottom: 15.h),
         child: Column(
@@ -90,8 +91,7 @@ class _DetailPageState extends State<DetailPage> {
             Stack(
               children: [
                 Container(
-                    height: 252
-                        .h, 
+                    height: 252.h,
                     color: const Color(0xFF671E36),
                     child: Column(
                       children: [
@@ -222,6 +222,8 @@ class _DetailPageState extends State<DetailPage> {
                                 ),
                               ),
                               Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text.rich(
                                     TextSpan(
@@ -245,10 +247,11 @@ class _DetailPageState extends State<DetailPage> {
                                       ],
                                     ),
                                   ),
+                                  SizedBox(width: 5.w),
                                   Text(
                                     'M.R.P.: Rs. 5600',
                                     style: GoogleFonts.lato(
-                                      fontSize: 11.sp,
+                                      fontSize: 7.sp,
                                       fontWeight: FontWeight.bold,
                                       color: const Color(0xFF631E36),
                                     ),
@@ -320,13 +323,13 @@ class _DetailPageState extends State<DetailPage> {
                         SizedBox(height: 8.h),
                         Row(
                           children: [
-                            _buildColorOption(const Color(0xFFFFC0CB)), 
+                            _buildColorOption(const Color(0xFFFFC0CB)),
                             SizedBox(width: 8.w),
-                            _buildColorOption(const Color(0xFF008080)), 
+                            _buildColorOption(const Color(0xFF008080)),
                             SizedBox(width: 8.w),
-                            _buildColorOption(const Color(0xFF008000)), 
+                            _buildColorOption(const Color(0xFF008000)),
                             SizedBox(width: 8.w),
-                            _buildColorOption(const Color(0xFF000000)), 
+                            _buildColorOption(const Color(0xFF000000)),
                           ],
                         ),
                       ],
